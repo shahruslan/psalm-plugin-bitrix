@@ -32,7 +32,7 @@ class Configuration
             throw new Exception('corePatch option not specified');
         }
 
-        $dir = realpath((string)$this->configuration->corePatch);
+        $dir = realpath((string) $this->configuration->corePatch);
 
         if ($dir === false) {
             throw new Exception('corePatch option value is invalid');
@@ -54,7 +54,7 @@ class Configuration
         }
 
         foreach ($this->configuration->modules->module as $module) {
-            $modules[] = (string)$module['name'];
+            $modules[] = (string) $module['name'];
         }
 
         return array_filter(array_unique($modules));
@@ -69,7 +69,7 @@ class Configuration
             return null;
         }
 
-        $file = realpath((string)$this->configuration->customOrmAnnotation);
+        $file = realpath((string) $this->configuration->customOrmAnnotation);
 
         if ($file === false) {
             throw new Exception('customOrmAnnotation option value is invalid');

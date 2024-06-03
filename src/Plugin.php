@@ -7,7 +7,6 @@ use SimpleXMLElement;
 use Psalm\Plugin\PluginEntryPointInterface;
 use Psalm\Plugin\RegistrationInterface;
 
-
 class Plugin implements PluginEntryPointInterface
 {
     public function __invoke(RegistrationInterface $registration, ?SimpleXMLElement $config = null): void
@@ -25,7 +24,7 @@ class Plugin implements PluginEntryPointInterface
 
         $registration->addStubFile("$path/modules/main/meta/orm.php");
 
-        foreach ( $this->getModuleStabFiles($modules, $path) as $file) {
+        foreach ($this->getModuleStabFiles($modules, $path) as $file) {
             $registration->addStubFile($file);
         }
 
