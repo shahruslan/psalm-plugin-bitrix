@@ -45,6 +45,10 @@ class Plugin implements PluginEntryPointInterface
     {
         $result = [];
 
+        if (count($modules) === 0) {
+            return $result;
+        }
+
         $before = get_included_files();
 
         foreach ($modules as $module) {
