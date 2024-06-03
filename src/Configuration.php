@@ -28,18 +28,18 @@ class Configuration
      */
     public function getBitrixPath(): string
     {
-        if (!isset($this->configuration->bitrixDir)) {
-            throw new Exception('bitrixDir option not specified');
+        if (!isset($this->configuration->corePatch)) {
+            throw new Exception('corePatch option not specified');
         }
 
-        $dir = realpath((string)$this->configuration->bitrixDir);
+        $dir = realpath((string)$this->configuration->corePatch);
 
         if ($dir === false) {
-            throw new Exception('bitrixDir option value is invalid');
+            throw new Exception('corePatch option value is invalid');
         }
 
         if (!is_dir($dir)) {
-            throw new Exception('bitrixDir option value is not a directory');
+            throw new Exception('corePatch option value is not a directory');
         }
 
         return $dir;
